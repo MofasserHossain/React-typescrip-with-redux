@@ -12,15 +12,15 @@ export interface Todo {
 }
 
 const App: FC = () => {
-  const [todos, setTodo] = useState<string>('');
-  const { todo } = useSelector((store: RootState) => store.todo);
-  console.log(`🦄 ~ file: App.tsx ~ line 17 ~ todo`, todo);
+  const [todo, setTodo] = useState<string>('');
+  const { todo: newTodo } = useSelector((store: RootState) => store.todo);
+  console.log(`🦄 ~ file: App.tsx ~ line 17 ~ todo`, newTodo);
   const dispatch: Dispatch<any> = useDispatch();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (todos !== '') {
-      const data = { id: Date.now(), value: todos, isDone: false };
+    if (todo !== '') {
+      const data = { id: Date.now(), value: todo, isDone: false };
       dispatch(addTodo(data));
       setTodo('');
     }
@@ -47,9 +47,9 @@ const App: FC = () => {
           margin: '0 auto',
         }}
       >
-        <TodoFrom todo={todos} setTodo={setTodo} handleSubmit={handleSubmit} />
+        <TodoFrom todo={todo} setTodo={setTodo} handleSubmit={handleSubmit} />
         <TodoList
-          todoList={todo}
+          todoList={newTodo}
           handleDelete={handleDelete}
           handleView={handleView}
         />
