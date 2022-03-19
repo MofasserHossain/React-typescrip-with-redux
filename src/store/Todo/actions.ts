@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { Todo } from '../../App';
+import { Todo } from '../../Pages/TodoPage';
 import { ActionType } from './actionTypes';
 
 interface ADD_TODO {

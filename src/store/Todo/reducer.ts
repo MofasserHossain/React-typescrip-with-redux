@@ -1,4 +1,4 @@
-import { Todo } from './../../App';
+import { Todo } from '../../Pages/TodoPage';
 import { Action } from './actions';
 import { ActionType } from './actionTypes';
 

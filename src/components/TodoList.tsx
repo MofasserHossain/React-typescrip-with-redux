@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import { Todo } from '../App';
+import { Todo } from '../Pages/TodoPage';
 
 interface Props {
   todoList: Todo[];
